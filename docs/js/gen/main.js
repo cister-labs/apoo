@@ -15059,8 +15059,8 @@ $c_Lapoo_backend_Semantics$.prototype.next__Lapoo_backend_Semantics$St__sci_Set 
       var a = st$tailLocal1.Lapoo_backend_Semantics$St__f_pc;
       var this$3 = new $c_s_PartialFunction$Lifted(this$2);
       var this$4 = this$3.apply__O__s_Option(a);
-      var x6 = $as_Lapoo_syntax_Apoo$Instr((this$4.isEmpty__Z() ? new $c_Lapoo_syntax_Apoo$Instr$Fail() : this$4.get__O()));
-      if ((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Const)) {
+      var x9 = $as_Lapoo_syntax_Apoo$Instr((this$4.isEmpty__Z() ? new $c_Lapoo_syntax_Apoo$Instr$Fail() : this$4.get__O()));
+      if (((((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Const) || (x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Memm)) || (x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Equ)) || (x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Str))) {
         var prog = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
         var pc = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
         var reg = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
@@ -15070,335 +15070,485 @@ $c_Lapoo_backend_Semantics$.prototype.next__Lapoo_backend_Semantics$St__sci_Set 
         st$tailLocal1 = new $c_Lapoo_backend_Semantics$St(prog, pc, reg, mem, lbl, stk);
         continue
       };
-      if ((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Memm)) {
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Push)) {
+        var x$1 = $as_Lapoo_syntax_Apoo$Instr$Push(x9);
+        var x101 = x$1.Lapoo_syntax_Apoo$Instr$Push__f_r;
+        var this$15 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x3 = $m_sr_ScalaRunTime$();
+        var self = (((("push " + $p_Lapoo_backend_Semantics$__show__I__T(this, x101)) + " (") + st$tailLocal1.r__I__I(x101)) + ")");
         var prog$1 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
         var pc$1 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
-        var reg$1 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var $$x1 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var y = ((1 + $uI(st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.apply__O__O(15))) | 0);
+        var reg$1 = $as_sci_Map($$x1.$plus__T2__sci_MapOps(new $c_T2(15, y)));
         var mem$1 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
         var lbl$1 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
-        var stk$1 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-        st$tailLocal1 = new $c_Lapoo_backend_Semantics$St(prog$1, pc$1, reg$1, mem$1, lbl$1, stk$1);
-        continue
+        var $$x2 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
+        var self$1 = ((1 + $uI(st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.apply__O__O(15))) | 0);
+        var y$1 = st$tailLocal1.r__I__I(x101);
+        var stk$1 = $as_sci_Map($$x2.$plus__T2__sci_MapOps(new $c_T2(self$1, y$1)));
+        var y$2 = new $c_Lapoo_backend_Semantics$St(prog$1, pc$1, reg$1, mem$1, lbl$1, stk$1);
+        var elems$1 = $$x3.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self, y$2)]));
+        return this$15.from__sc_IterableOnce__sci_Set(elems$1)
       };
-      if ((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Loadn)) {
-        var x$1 = $as_Lapoo_syntax_Apoo$Instr$Loadn(x6);
-        var x65 = x$1.Lapoo_syntax_Apoo$Instr$Loadn__f_n;
-        var x66 = x$1.Lapoo_syntax_Apoo$Instr$Loadn__f_r;
-        var this$14 = $m_s_Predef$().s_Predef$__f_Set;
-        var $$x1 = $m_sr_ScalaRunTime$();
-        var self = ((("load " + $p_Lapoo_backend_Semantics$__show__I__T(this, x66)) + " := ") + x65);
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Pop)) {
+        var x$1$1 = $as_Lapoo_syntax_Apoo$Instr$Pop(x9);
+        var x98 = x$1$1.Lapoo_syntax_Apoo$Instr$Pop__f_r;
+        var this$24 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x6 = $m_sr_ScalaRunTime$();
+        var self$2 = (((("pop " + $p_Lapoo_backend_Semantics$__show__I__T(this, x98)) + " (") + st$tailLocal1.Lapoo_backend_Semantics$St__f_stk.getOrElse__O__F0__O(st$tailLocal1.r__I__I(15), new $c_sjsr_AnonFunction0(((this$2$1) => (() => (-1)))(this)))) + ")");
         var prog$2 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
         var pc$2 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
-        var reg$2 = $as_sci_Map(st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.$plus__T2__sci_MapOps(new $c_T2(x66, x65)));
+        var $$x5 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var y$3 = (((-1) + st$tailLocal1.r__I__I(15)) | 0);
+        var $$x4 = $$x5.$plus__T2__sci_MapOps(new $c_T2(15, y$3));
+        var y$4 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk.getOrElse__O__F0__O(st$tailLocal1.r__I__I(15), new $c_sjsr_AnonFunction0(((this$3$1) => (() => (-1)))(this)));
+        var reg$2 = $as_sci_Map($$x4.$plus__T2__sci_MapOps(new $c_T2(x98, y$4)));
         var mem$2 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
         var lbl$2 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
         var stk$2 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-        var y = new $c_Lapoo_backend_Semantics$St(prog$2, pc$2, reg$2, mem$2, lbl$2, stk$2);
-        var elems$1 = $$x1.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self, y)]));
-        return this$14.from__sc_IterableOnce__sci_Set(elems$1)
+        var y$5 = new $c_Lapoo_backend_Semantics$St(prog$2, pc$2, reg$2, mem$2, lbl$2, stk$2);
+        var elems$2 = $$x6.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$2, y$5)]));
+        return this$24.from__sc_IterableOnce__sci_Set(elems$2)
       };
-      if ((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Push)) {
-        var x$1$1 = $as_Lapoo_syntax_Apoo$Instr$Push(x6);
-        var x62 = x$1$1.Lapoo_syntax_Apoo$Instr$Push__f_r;
-        var this$23 = $m_s_Predef$().s_Predef$__f_Set;
-        var $$x4 = $m_sr_ScalaRunTime$();
-        var self$1 = (((("push " + $p_Lapoo_backend_Semantics$__show__I__T(this, x62)) + " (") + st$tailLocal1.r__I__I(x62)) + ")");
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Zero)) {
+        var x$1$2 = $as_Lapoo_syntax_Apoo$Instr$Zero(x9);
+        var x95 = x$1$2.Lapoo_syntax_Apoo$Instr$Zero__f_r;
+        var this$31 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x7 = $m_sr_ScalaRunTime$();
+        var self$3 = ("reset " + $p_Lapoo_backend_Semantics$__show__I__T(this, x95));
         var prog$3 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
         var pc$3 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
-        var $$x2 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
-        var y$1 = ((1 + $uI(st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.apply__O__O(15))) | 0);
-        var reg$3 = $as_sci_Map($$x2.$plus__T2__sci_MapOps(new $c_T2(15, y$1)));
+        var reg$3 = $as_sci_Map(st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.$plus__T2__sci_MapOps(new $c_T2(x95, 0)));
         var mem$3 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
         var lbl$3 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
-        var $$x3 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-        var self$2 = ((1 + $uI(st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.apply__O__O(15))) | 0);
-        var y$2 = st$tailLocal1.r__I__I(x62);
-        var stk$3 = $as_sci_Map($$x3.$plus__T2__sci_MapOps(new $c_T2(self$2, y$2)));
-        var y$3 = new $c_Lapoo_backend_Semantics$St(prog$3, pc$3, reg$3, mem$3, lbl$3, stk$3);
-        var elems$2 = $$x4.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$1, y$3)]));
-        return this$23.from__sc_IterableOnce__sci_Set(elems$2)
+        var stk$3 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
+        var y$6 = new $c_Lapoo_backend_Semantics$St(prog$3, pc$3, reg$3, mem$3, lbl$3, stk$3);
+        var elems$3 = $$x7.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$3, y$6)]));
+        return this$31.from__sc_IterableOnce__sci_Set(elems$3)
       };
-      if ((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Pop)) {
-        var x$1$2 = $as_Lapoo_syntax_Apoo$Instr$Pop(x6);
-        var x59 = x$1$2.Lapoo_syntax_Apoo$Instr$Pop__f_r;
-        var this$32 = $m_s_Predef$().s_Predef$__f_Set;
-        var $$x7 = $m_sr_ScalaRunTime$();
-        var self$3 = (((("pop " + $p_Lapoo_backend_Semantics$__show__I__T(this, x59)) + " (") + st$tailLocal1.Lapoo_backend_Semantics$St__f_stk.getOrElse__O__F0__O(st$tailLocal1.r__I__I(15), new $c_sjsr_AnonFunction0(((this$2$1) => (() => (-1)))(this)))) + ")");
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Inc)) {
+        var x$1$3 = $as_Lapoo_syntax_Apoo$Instr$Inc(x9);
+        var x92 = x$1$3.Lapoo_syntax_Apoo$Instr$Inc__f_r;
+        var this$38 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x9 = $m_sr_ScalaRunTime$();
+        var self$4 = ($p_Lapoo_backend_Semantics$__show__I__T(this, x92) + "++");
         var prog$4 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
         var pc$4 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
-        var $$x6 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
-        var y$4 = (((-1) + st$tailLocal1.r__I__I(15)) | 0);
-        var $$x5 = $$x6.$plus__T2__sci_MapOps(new $c_T2(15, y$4));
-        var y$5 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk.getOrElse__O__F0__O(st$tailLocal1.r__I__I(15), new $c_sjsr_AnonFunction0(((this$3$1) => (() => (-1)))(this)));
-        var reg$4 = $as_sci_Map($$x5.$plus__T2__sci_MapOps(new $c_T2(x59, y$5)));
+        var $$x8 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var y$7 = ((1 + st$tailLocal1.r__I__I(x92)) | 0);
+        var reg$4 = $as_sci_Map($$x8.$plus__T2__sci_MapOps(new $c_T2(x92, y$7)));
         var mem$4 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
         var lbl$4 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
         var stk$4 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-        var y$6 = new $c_Lapoo_backend_Semantics$St(prog$4, pc$4, reg$4, mem$4, lbl$4, stk$4);
-        var elems$3 = $$x7.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$3, y$6)]));
-        return this$32.from__sc_IterableOnce__sci_Set(elems$3)
+        var y$8 = new $c_Lapoo_backend_Semantics$St(prog$4, pc$4, reg$4, mem$4, lbl$4, stk$4);
+        var elems$4 = $$x9.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$4, y$8)]));
+        return this$38.from__sc_IterableOnce__sci_Set(elems$4)
       };
-      if ((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Zero)) {
-        var x$1$3 = $as_Lapoo_syntax_Apoo$Instr$Zero(x6);
-        var x56 = x$1$3.Lapoo_syntax_Apoo$Instr$Zero__f_r;
-        var this$39 = $m_s_Predef$().s_Predef$__f_Set;
-        var $$x8 = $m_sr_ScalaRunTime$();
-        var self$4 = ("reset " + $p_Lapoo_backend_Semantics$__show__I__T(this, x56));
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Dec)) {
+        var x$1$4 = $as_Lapoo_syntax_Apoo$Instr$Dec(x9);
+        var x89 = x$1$4.Lapoo_syntax_Apoo$Instr$Dec__f_r;
+        var this$45 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x11 = $m_sr_ScalaRunTime$();
+        var self$5 = ($p_Lapoo_backend_Semantics$__show__I__T(this, x89) + "--");
         var prog$5 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
         var pc$5 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
-        var reg$5 = $as_sci_Map(st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.$plus__T2__sci_MapOps(new $c_T2(x56, 0)));
+        var $$x10 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var y$9 = (((-1) + st$tailLocal1.r__I__I(x89)) | 0);
+        var reg$5 = $as_sci_Map($$x10.$plus__T2__sci_MapOps(new $c_T2(x89, y$9)));
         var mem$5 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
         var lbl$5 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
         var stk$5 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-        var y$7 = new $c_Lapoo_backend_Semantics$St(prog$5, pc$5, reg$5, mem$5, lbl$5, stk$5);
-        var elems$4 = $$x8.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$4, y$7)]));
-        return this$39.from__sc_IterableOnce__sci_Set(elems$4)
+        var y$10 = new $c_Lapoo_backend_Semantics$St(prog$5, pc$5, reg$5, mem$5, lbl$5, stk$5);
+        var elems$5 = $$x11.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$5, y$10)]));
+        return this$45.from__sc_IterableOnce__sci_Set(elems$5)
       };
-      if ((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Jsr)) {
-        var x$1$4 = $as_Lapoo_syntax_Apoo$Instr$Jsr(x6);
-        var x52 = x$1$4.Lapoo_syntax_Apoo$Instr$Jsr__f_a;
-        if ($isInt(x52)) {
-          var m = $uI(x52);
-          var this$48 = $m_s_Predef$().s_Predef$__f_Set;
-          var $$x11 = $m_sr_ScalaRunTime$();
-          var self$5 = ("push pc/jump to " + m);
-          var prog$6 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
-          var $$x9 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
-          var y$8 = ((1 + $uI(st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.apply__O__O(15))) | 0);
-          var reg$6 = $as_sci_Map($$x9.$plus__T2__sci_MapOps(new $c_T2(15, y$8)));
-          var mem$6 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
-          var lbl$6 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
-          var $$x10 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-          var self$6 = ((1 + $uI(st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.apply__O__O(15))) | 0);
-          var y$9 = st$tailLocal1.Lapoo_backend_Semantics$St__f_pc;
-          var stk$6 = $as_sci_Map($$x10.$plus__T2__sci_MapOps(new $c_T2(self$6, y$9)));
-          var y$10 = new $c_Lapoo_backend_Semantics$St(prog$6, m, reg$6, mem$6, lbl$6, stk$6);
-          var elems$5 = $$x11.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$5, y$10)]));
-          return this$48.from__sc_IterableOnce__sci_Set(elems$5)
-        };
-        if (((typeof x52) === "string")) {
-          var s = $as_T(x52);
-          var this$56 = $m_s_Predef$().s_Predef$__f_Set;
-          var $$x14 = $m_sr_ScalaRunTime$();
-          var self$7 = ("push pc/jump to " + st$tailLocal1.Lapoo_backend_Semantics$St__f_prog.Lapoo_syntax_Apoo$Program__f_labels.getOrElse__O__F0__O(s, new $c_sjsr_AnonFunction0(((this$4$1) => (() => (-1)))(this))));
-          var prog$7 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
-          var pc$6 = $uI(st$tailLocal1.Lapoo_backend_Semantics$St__f_prog.Lapoo_syntax_Apoo$Program__f_labels.getOrElse__O__F0__O(s, new $c_sjsr_AnonFunction0(((this$5$1) => (() => (-1)))(this))));
-          var $$x12 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
-          var y$11 = ((1 + $uI(st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.apply__O__O(15))) | 0);
-          var reg$7 = $as_sci_Map($$x12.$plus__T2__sci_MapOps(new $c_T2(15, y$11)));
-          var mem$7 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
-          var lbl$7 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
-          var $$x13 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-          var self$8 = ((1 + $uI(st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.apply__O__O(15))) | 0);
-          var y$12 = st$tailLocal1.Lapoo_backend_Semantics$St__f_pc;
-          var stk$7 = $as_sci_Map($$x13.$plus__T2__sci_MapOps(new $c_T2(self$8, y$12)));
-          var y$13 = new $c_Lapoo_backend_Semantics$St(prog$7, pc$6, reg$7, mem$7, lbl$7, stk$7);
-          var elems$6 = $$x14.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$7, y$13)]));
-          return this$56.from__sc_IterableOnce__sci_Set(elems$6)
-        }
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Jump)) {
+        var x$1$5 = $as_Lapoo_syntax_Apoo$Instr$Jump(x9);
+        var x86 = x$1$5.Lapoo_syntax_Apoo$Instr$Jump__f_a;
+        var this$50 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x12 = $m_sr_ScalaRunTime$();
+        var self$6 = ("push pc/jump to " + st$tailLocal1.a__O__I(x86));
+        var prog$6 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
+        var pc$6 = st$tailLocal1.a__O__I(x86);
+        var reg$6 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var mem$6 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
+        var lbl$6 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
+        var stk$6 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
+        var y$11 = new $c_Lapoo_backend_Semantics$St(prog$6, pc$6, reg$6, mem$6, lbl$6, stk$6);
+        var elems$6 = $$x12.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$6, y$11)]));
+        return this$50.from__sc_IterableOnce__sci_Set(elems$6)
       };
-      if ((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Jnzero)) {
-        var x$1$5 = $as_Lapoo_syntax_Apoo$Instr$Jnzero(x6);
-        var x43 = x$1$5.Lapoo_syntax_Apoo$Instr$Jnzero__f_r;
-        var x44 = x$1$5.Lapoo_syntax_Apoo$Instr$Jnzero__f_a;
-        if (((typeof x44) === "string")) {
-          var s$2 = $as_T(x44);
-          var this$61 = $m_s_Predef$().s_Predef$__f_Set;
-          var $$x15 = $m_sr_ScalaRunTime$();
-          var self$9 = ((("jump if " + $p_Lapoo_backend_Semantics$__show__I__T(this, x43)) + "!=0 to ") + st$tailLocal1.Lapoo_backend_Semantics$St__f_prog.Lapoo_syntax_Apoo$Program__f_labels.getOrElse__O__F0__O(s$2, new $c_sjsr_AnonFunction0(((this$6$1) => (() => (-1)))(this))));
-          var prog$8 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
-          var pc$7 = ((st$tailLocal1.r__I__I(x43) === 0) ? ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0) : $uI(st$tailLocal1.Lapoo_backend_Semantics$St__f_prog.Lapoo_syntax_Apoo$Program__f_labels.getOrElse__O__F0__O(s$2, new $c_sjsr_AnonFunction0(((this$7$1) => (() => (-1)))(this)))));
-          var reg$8 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
-          var mem$8 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
-          var lbl$8 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
-          var stk$8 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-          var y$14 = new $c_Lapoo_backend_Semantics$St(prog$8, pc$7, reg$8, mem$8, lbl$8, stk$8);
-          var elems$7 = $$x15.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$9, y$14)]));
-          return this$61.from__sc_IterableOnce__sci_Set(elems$7)
-        }
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Jsr)) {
+        var x$1$6 = $as_Lapoo_syntax_Apoo$Instr$Jsr(x9);
+        var x83 = x$1$6.Lapoo_syntax_Apoo$Instr$Jsr__f_a;
+        var this$59 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x15 = $m_sr_ScalaRunTime$();
+        var self$7 = ("push pc/jump to " + st$tailLocal1.a__O__I(x83));
+        var prog$7 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
+        var pc$7 = st$tailLocal1.a__O__I(x83);
+        var $$x13 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var y$12 = ((1 + $uI(st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.apply__O__O(15))) | 0);
+        var reg$7 = $as_sci_Map($$x13.$plus__T2__sci_MapOps(new $c_T2(15, y$12)));
+        var mem$7 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
+        var lbl$7 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
+        var $$x14 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
+        var self$8 = ((1 + $uI(st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.apply__O__O(15))) | 0);
+        var y$13 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
+        var stk$7 = $as_sci_Map($$x14.$plus__T2__sci_MapOps(new $c_T2(self$8, y$13)));
+        var y$14 = new $c_Lapoo_backend_Semantics$St(prog$7, pc$7, reg$7, mem$7, lbl$7, stk$7);
+        var elems$7 = $$x15.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$7, y$14)]));
+        return this$59.from__sc_IterableOnce__sci_Set(elems$7)
       };
-      if ((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Store)) {
-        var x$1$6 = $as_Lapoo_syntax_Apoo$Instr$Store(x6);
-        var x39 = x$1$6.Lapoo_syntax_Apoo$Instr$Store__f_r;
-        var x40 = x$1$6.Lapoo_syntax_Apoo$Instr$Store__f_m;
-        var this$68 = $m_s_Predef$().s_Predef$__f_Set;
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Jzero)) {
+        var x$1$7 = $as_Lapoo_syntax_Apoo$Instr$Jzero(x9);
+        var x79 = x$1$7.Lapoo_syntax_Apoo$Instr$Jzero__f_r;
+        var x80 = x$1$7.Lapoo_syntax_Apoo$Instr$Jzero__f_a;
+        var this$64 = $m_s_Predef$().s_Predef$__f_Set;
         var $$x16 = $m_sr_ScalaRunTime$();
-        var self$10 = ((("store " + $p_Lapoo_backend_Semantics$__show__I__T(this, x39)) + " := ") + x40);
+        var self$9 = ((("jump if " + $p_Lapoo_backend_Semantics$__show__I__T(this, x79)) + "==0 to ") + st$tailLocal1.a__O__I(x80));
+        var prog$8 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
+        var pc$8 = ((st$tailLocal1.r__I__I(x79) !== 0) ? ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0) : st$tailLocal1.a__O__I(x80));
+        var reg$8 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var mem$8 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
+        var lbl$8 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
+        var stk$8 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
+        var y$15 = new $c_Lapoo_backend_Semantics$St(prog$8, pc$8, reg$8, mem$8, lbl$8, stk$8);
+        var elems$8 = $$x16.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$9, y$15)]));
+        return this$64.from__sc_IterableOnce__sci_Set(elems$8)
+      };
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Jnzero)) {
+        var x$1$8 = $as_Lapoo_syntax_Apoo$Instr$Jnzero(x9);
+        var x75 = x$1$8.Lapoo_syntax_Apoo$Instr$Jnzero__f_r;
+        var x76 = x$1$8.Lapoo_syntax_Apoo$Instr$Jnzero__f_a;
+        var this$69 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x17 = $m_sr_ScalaRunTime$();
+        var self$10 = ((("jump if " + $p_Lapoo_backend_Semantics$__show__I__T(this, x75)) + "!=0 to ") + st$tailLocal1.a__O__I(x76));
         var prog$9 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
-        var pc$8 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
-        var reg$9 = $as_sci_Map(st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.$plus__T2__sci_MapOps(new $c_T2(x39, x40)));
+        var pc$9 = ((st$tailLocal1.r__I__I(x75) === 0) ? ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0) : st$tailLocal1.a__O__I(x76));
+        var reg$9 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
         var mem$9 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
         var lbl$9 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
         var stk$9 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-        var y$15 = new $c_Lapoo_backend_Semantics$St(prog$9, pc$8, reg$9, mem$9, lbl$9, stk$9);
-        var elems$8 = $$x16.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$10, y$15)]));
-        return this$68.from__sc_IterableOnce__sci_Set(elems$8)
+        var y$16 = new $c_Lapoo_backend_Semantics$St(prog$9, pc$9, reg$9, mem$9, lbl$9, stk$9);
+        var elems$9 = $$x17.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$10, y$16)]));
+        return this$69.from__sc_IterableOnce__sci_Set(elems$9)
       };
-      if ((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Storer)) {
-        var x$1$7 = $as_Lapoo_syntax_Apoo$Instr$Storer(x6);
-        var x35 = x$1$7.Lapoo_syntax_Apoo$Instr$Storer__f_r1;
-        var x36 = x$1$7.Lapoo_syntax_Apoo$Instr$Storer__f_r2;
-        var this$75 = $m_s_Predef$().s_Predef$__f_Set;
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Jpos)) {
+        var x$1$9 = $as_Lapoo_syntax_Apoo$Instr$Jpos(x9);
+        var x71 = x$1$9.Lapoo_syntax_Apoo$Instr$Jpos__f_r;
+        var x72 = x$1$9.Lapoo_syntax_Apoo$Instr$Jpos__f_a;
+        var this$74 = $m_s_Predef$().s_Predef$__f_Set;
         var $$x18 = $m_sr_ScalaRunTime$();
-        var self$11 = ((("store " + $p_Lapoo_backend_Semantics$__show__I__T(this, x36)) + " := ") + $p_Lapoo_backend_Semantics$__show__I__T(this, x35));
+        var self$11 = ((("jump if " + $p_Lapoo_backend_Semantics$__show__I__T(this, x71)) + ">0 to ") + st$tailLocal1.a__O__I(x72));
         var prog$10 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
-        var pc$9 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
-        var $$x17 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
-        var y$16 = st$tailLocal1.r__I__I(x35);
-        var reg$10 = $as_sci_Map($$x17.$plus__T2__sci_MapOps(new $c_T2(x36, y$16)));
+        var pc$10 = ((st$tailLocal1.r__I__I(x71) > 0) ? ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0) : st$tailLocal1.a__O__I(x72));
+        var reg$10 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
         var mem$10 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
         var lbl$10 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
         var stk$10 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-        var y$17 = new $c_Lapoo_backend_Semantics$St(prog$10, pc$9, reg$10, mem$10, lbl$10, stk$10);
-        var elems$9 = $$x18.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$11, y$17)]));
-        return this$75.from__sc_IterableOnce__sci_Set(elems$9)
+        var y$17 = new $c_Lapoo_backend_Semantics$St(prog$10, pc$10, reg$10, mem$10, lbl$10, stk$10);
+        var elems$10 = $$x18.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$11, y$17)]));
+        return this$74.from__sc_IterableOnce__sci_Set(elems$10)
       };
-      if ((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Storeo)) {
-        var x$1$8 = $as_Lapoo_syntax_Apoo$Instr$Storeo(x6);
-        var x31 = x$1$8.Lapoo_syntax_Apoo$Instr$Storeo__f_r;
-        var x32 = x$1$8.Lapoo_syntax_Apoo$Instr$Storeo__f_n;
-        var this$82 = $m_s_Predef$().s_Predef$__f_Set;
-        var $$x20 = $m_sr_ScalaRunTime$();
-        var self$12 = ((((("store stack(" + st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.apply__O__O(14)) + "+") + x32) + ") := ") + $p_Lapoo_backend_Semantics$__show__I__T(this, x31));
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Jneg)) {
+        var x$1$10 = $as_Lapoo_syntax_Apoo$Instr$Jneg(x9);
+        var x67 = x$1$10.Lapoo_syntax_Apoo$Instr$Jneg__f_r;
+        var x68 = x$1$10.Lapoo_syntax_Apoo$Instr$Jneg__f_a;
+        var this$79 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x19 = $m_sr_ScalaRunTime$();
+        var self$12 = ((("jump if " + $p_Lapoo_backend_Semantics$__show__I__T(this, x67)) + "<0 to ") + st$tailLocal1.a__O__I(x68));
         var prog$11 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
-        var pc$10 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
+        var pc$11 = ((st$tailLocal1.r__I__I(x67) < 0) ? ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0) : st$tailLocal1.a__O__I(x68));
         var reg$11 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
         var mem$11 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
         var lbl$11 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
-        var $$x19 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-        var self$13 = (($uI(st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.apply__O__O(14)) + x32) | 0);
-        var y$18 = st$tailLocal1.r__I__I(x31);
-        var stk$11 = $as_sci_Map($$x19.$plus__T2__sci_MapOps(new $c_T2(self$13, y$18)));
-        var y$19 = new $c_Lapoo_backend_Semantics$St(prog$11, pc$10, reg$11, mem$11, lbl$11, stk$11);
-        var elems$10 = $$x20.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$12, y$19)]));
-        return this$82.from__sc_IterableOnce__sci_Set(elems$10)
+        var stk$11 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
+        var y$18 = new $c_Lapoo_backend_Semantics$St(prog$11, pc$11, reg$11, mem$11, lbl$11, stk$11);
+        var elems$11 = $$x19.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$12, y$18)]));
+        return this$79.from__sc_IterableOnce__sci_Set(elems$11)
       };
-      if ((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Add)) {
-        var x$1$9 = $as_Lapoo_syntax_Apoo$Instr$Add(x6);
-        var x27 = x$1$9.Lapoo_syntax_Apoo$Instr$Add__f_r1;
-        var x28 = x$1$9.Lapoo_syntax_Apoo$Instr$Add__f_r2;
-        var this$89 = $m_s_Predef$().s_Predef$__f_Set;
-        var $$x22 = $m_sr_ScalaRunTime$();
-        var self$14 = (($p_Lapoo_backend_Semantics$__show__I__T(this, x28) + " += ") + $p_Lapoo_backend_Semantics$__show__I__T(this, x27));
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Store)) {
+        var x$1$11 = $as_Lapoo_syntax_Apoo$Instr$Store(x9);
+        var x63 = x$1$11.Lapoo_syntax_Apoo$Instr$Store__f_r;
+        var x64 = x$1$11.Lapoo_syntax_Apoo$Instr$Store__f_m;
+        var this$86 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x21 = $m_sr_ScalaRunTime$();
+        var self$13 = ((("store mem(" + x64) + ") := ") + $p_Lapoo_backend_Semantics$__show__I__T(this, x63));
         var prog$12 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
-        var pc$11 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
-        var $$x21 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
-        var y$20 = ((st$tailLocal1.r__I__I(x27) + st$tailLocal1.r__I__I(x28)) | 0);
-        var reg$12 = $as_sci_Map($$x21.$plus__T2__sci_MapOps(new $c_T2(x28, y$20)));
-        var mem$12 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
+        var pc$12 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
+        var reg$12 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var $$x20 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
+        var y$19 = st$tailLocal1.r__I__I(x63);
+        var mem$12 = $as_sci_Map($$x20.$plus__T2__sci_MapOps(new $c_T2(x64, y$19)));
         var lbl$12 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
         var stk$12 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-        var y$21 = new $c_Lapoo_backend_Semantics$St(prog$12, pc$11, reg$12, mem$12, lbl$12, stk$12);
-        var elems$11 = $$x22.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$14, y$21)]));
-        return this$89.from__sc_IterableOnce__sci_Set(elems$11)
+        var y$20 = new $c_Lapoo_backend_Semantics$St(prog$12, pc$12, reg$12, mem$12, lbl$12, stk$12);
+        var elems$12 = $$x21.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$13, y$20)]));
+        return this$86.from__sc_IterableOnce__sci_Set(elems$12)
       };
-      if ((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Sub)) {
-        var x$1$10 = $as_Lapoo_syntax_Apoo$Instr$Sub(x6);
-        var x23 = x$1$10.Lapoo_syntax_Apoo$Instr$Sub__f_r1;
-        var x24 = x$1$10.Lapoo_syntax_Apoo$Instr$Sub__f_r2;
-        var this$96 = $m_s_Predef$().s_Predef$__f_Set;
-        var $$x24 = $m_sr_ScalaRunTime$();
-        var self$15 = (((($p_Lapoo_backend_Semantics$__show__I__T(this, x24) + " := ") + $p_Lapoo_backend_Semantics$__show__I__T(this, x23)) + "-") + $p_Lapoo_backend_Semantics$__show__I__T(this, x24));
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Storer)) {
+        var x$1$12 = $as_Lapoo_syntax_Apoo$Instr$Storer(x9);
+        var x59 = x$1$12.Lapoo_syntax_Apoo$Instr$Storer__f_r1;
+        var x60 = x$1$12.Lapoo_syntax_Apoo$Instr$Storer__f_r2;
+        var this$93 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x23 = $m_sr_ScalaRunTime$();
+        var self$14 = ((("store " + $p_Lapoo_backend_Semantics$__show__I__T(this, x60)) + " := ") + $p_Lapoo_backend_Semantics$__show__I__T(this, x59));
         var prog$13 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
-        var pc$12 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
-        var $$x23 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
-        var y$22 = ((st$tailLocal1.r__I__I(x23) - st$tailLocal1.r__I__I(x24)) | 0);
-        var reg$13 = $as_sci_Map($$x23.$plus__T2__sci_MapOps(new $c_T2(x24, y$22)));
+        var pc$13 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
+        var $$x22 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var y$21 = st$tailLocal1.r__I__I(x59);
+        var reg$13 = $as_sci_Map($$x22.$plus__T2__sci_MapOps(new $c_T2(x60, y$21)));
         var mem$13 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
         var lbl$13 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
         var stk$13 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-        var y$23 = new $c_Lapoo_backend_Semantics$St(prog$13, pc$12, reg$13, mem$13, lbl$13, stk$13);
-        var elems$12 = $$x24.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$15, y$23)]));
-        return this$96.from__sc_IterableOnce__sci_Set(elems$12)
+        var y$22 = new $c_Lapoo_backend_Semantics$St(prog$13, pc$13, reg$13, mem$13, lbl$13, stk$13);
+        var elems$13 = $$x23.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$14, y$22)]));
+        return this$93.from__sc_IterableOnce__sci_Set(elems$13)
       };
-      if ((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Mul)) {
-        var x$1$11 = $as_Lapoo_syntax_Apoo$Instr$Mul(x6);
-        var x19 = x$1$11.Lapoo_syntax_Apoo$Instr$Mul__f_r1;
-        var x20 = x$1$11.Lapoo_syntax_Apoo$Instr$Mul__f_r2;
-        var this$103 = $m_s_Predef$().s_Predef$__f_Set;
-        var $$x26 = $m_sr_ScalaRunTime$();
-        var self$16 = (((($p_Lapoo_backend_Semantics$__show__I__T(this, x20) + " := ") + $p_Lapoo_backend_Semantics$__show__I__T(this, x19)) + "*") + $p_Lapoo_backend_Semantics$__show__I__T(this, x20));
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Storei)) {
+        var x$1$13 = $as_Lapoo_syntax_Apoo$Instr$Storei(x9);
+        var x55 = x$1$13.Lapoo_syntax_Apoo$Instr$Storei__f_r1;
+        var x56 = x$1$13.Lapoo_syntax_Apoo$Instr$Storei__f_r2;
+        var this$100 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x25 = $m_sr_ScalaRunTime$();
+        var self$15 = ((("store mem(" + $p_Lapoo_backend_Semantics$__show__I__T(this, x56)) + ") := ") + $p_Lapoo_backend_Semantics$__show__I__T(this, x55));
         var prog$14 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
-        var pc$13 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
-        var $$x25 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
-        var y$24 = $imul(st$tailLocal1.r__I__I(x19), st$tailLocal1.r__I__I(x20));
-        var reg$14 = $as_sci_Map($$x25.$plus__T2__sci_MapOps(new $c_T2(x20, y$24)));
-        var mem$14 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
+        var pc$14 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
+        var reg$14 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var $$x24 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
+        var self$16 = st$tailLocal1.r__I__I(x56);
+        var y$23 = st$tailLocal1.r__I__I(x55);
+        var mem$14 = $as_sci_Map($$x24.$plus__T2__sci_MapOps(new $c_T2(self$16, y$23)));
         var lbl$14 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
         var stk$14 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-        var y$25 = new $c_Lapoo_backend_Semantics$St(prog$14, pc$13, reg$14, mem$14, lbl$14, stk$14);
-        var elems$13 = $$x26.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$16, y$25)]));
-        return this$103.from__sc_IterableOnce__sci_Set(elems$13)
+        var y$24 = new $c_Lapoo_backend_Semantics$St(prog$14, pc$14, reg$14, mem$14, lbl$14, stk$14);
+        var elems$14 = $$x25.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$15, y$24)]));
+        return this$100.from__sc_IterableOnce__sci_Set(elems$14)
       };
-      if ((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Loado)) {
-        var x$1$12 = $as_Lapoo_syntax_Apoo$Instr$Loado(x6);
-        var x15 = x$1$12.Lapoo_syntax_Apoo$Instr$Loado__f_n;
-        var x16 = x$1$12.Lapoo_syntax_Apoo$Instr$Loado__f_r;
-        var this$110 = $m_s_Predef$().s_Predef$__f_Set;
-        var $$x28 = $m_sr_ScalaRunTime$();
-        var self$17 = (((((("load " + $p_Lapoo_backend_Semantics$__show__I__T(this, x16)) + " := stack(") + st$tailLocal1.r__I__I(14)) + "+") + x15) + ")");
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Storeo)) {
+        var x$1$14 = $as_Lapoo_syntax_Apoo$Instr$Storeo(x9);
+        var x51 = x$1$14.Lapoo_syntax_Apoo$Instr$Storeo__f_r;
+        var x52 = x$1$14.Lapoo_syntax_Apoo$Instr$Storeo__f_n;
+        var this$107 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x27 = $m_sr_ScalaRunTime$();
+        var self$17 = ((((("store stack(" + st$tailLocal1.r__I__I(14)) + "+") + x52) + ") := ") + $p_Lapoo_backend_Semantics$__show__I__T(this, x51));
         var prog$15 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
-        var pc$14 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
-        var $$x27 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
-        var y$26 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk.getOrElse__O__F0__O(((st$tailLocal1.r__I__I(14) + x15) | 0), new $c_sjsr_AnonFunction0(((this$8$1) => (() => (-1)))(this)));
-        var reg$15 = $as_sci_Map($$x27.$plus__T2__sci_MapOps(new $c_T2(x16, y$26)));
+        var pc$15 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
+        var reg$15 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
         var mem$15 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
         var lbl$15 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
-        var stk$15 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-        var y$27 = new $c_Lapoo_backend_Semantics$St(prog$15, pc$14, reg$15, mem$15, lbl$15, stk$15);
-        var elems$14 = $$x28.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$17, y$27)]));
-        return this$110.from__sc_IterableOnce__sci_Set(elems$14)
+        var $$x26 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
+        var self$18 = ((st$tailLocal1.r__I__I(14) + x52) | 0);
+        var y$25 = st$tailLocal1.r__I__I(x51);
+        var stk$15 = $as_sci_Map($$x26.$plus__T2__sci_MapOps(new $c_T2(self$18, y$25)));
+        var y$26 = new $c_Lapoo_backend_Semantics$St(prog$15, pc$15, reg$15, mem$15, lbl$15, stk$15);
+        var elems$15 = $$x27.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$17, y$26)]));
+        return this$107.from__sc_IterableOnce__sci_Set(elems$15)
       };
-      if ((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Load)) {
-        var x$1$13 = $as_Lapoo_syntax_Apoo$Instr$Load(x6);
-        var x11 = x$1$13.Lapoo_syntax_Apoo$Instr$Load__f_m;
-        var x12 = x$1$13.Lapoo_syntax_Apoo$Instr$Load__f_r;
-        var this$117 = $m_s_Predef$().s_Predef$__f_Set;
-        var $$x30 = $m_sr_ScalaRunTime$();
-        var self$18 = (((("load " + $p_Lapoo_backend_Semantics$__show__I__T(this, x12)) + " := mem(") + x11) + ")");
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Add)) {
+        var x$1$15 = $as_Lapoo_syntax_Apoo$Instr$Add(x9);
+        var x47 = x$1$15.Lapoo_syntax_Apoo$Instr$Add__f_r1;
+        var x48 = x$1$15.Lapoo_syntax_Apoo$Instr$Add__f_r2;
+        var this$114 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x29 = $m_sr_ScalaRunTime$();
+        var self$19 = (($p_Lapoo_backend_Semantics$__show__I__T(this, x48) + " += ") + $p_Lapoo_backend_Semantics$__show__I__T(this, x47));
         var prog$16 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
-        var pc$15 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
-        var $$x29 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
-        var y$28 = st$tailLocal1.m__I__I(x11);
-        var reg$16 = $as_sci_Map($$x29.$plus__T2__sci_MapOps(new $c_T2(x12, y$28)));
+        var pc$16 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
+        var $$x28 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var y$27 = ((st$tailLocal1.r__I__I(x47) + st$tailLocal1.r__I__I(x48)) | 0);
+        var reg$16 = $as_sci_Map($$x28.$plus__T2__sci_MapOps(new $c_T2(x48, y$27)));
         var mem$16 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
         var lbl$16 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
         var stk$16 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-        var y$29 = new $c_Lapoo_backend_Semantics$St(prog$16, pc$15, reg$16, mem$16, lbl$16, stk$16);
-        var elems$15 = $$x30.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$18, y$29)]));
-        return this$117.from__sc_IterableOnce__sci_Set(elems$15)
+        var y$28 = new $c_Lapoo_backend_Semantics$St(prog$16, pc$16, reg$16, mem$16, lbl$16, stk$16);
+        var elems$16 = $$x29.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$19, y$28)]));
+        return this$114.from__sc_IterableOnce__sci_Set(elems$16)
       };
-      if (((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Rtn) && ($as_Lapoo_syntax_Apoo$Instr$Rtn(x6), true))) {
-        var this$123 = $m_s_Predef$().s_Predef$__f_Set;
-        var $$x32 = $m_sr_ScalaRunTime$();
-        var self$19 = ("return to " + st$tailLocal1.Lapoo_backend_Semantics$St__f_stk.getOrElse__O__F0__O(st$tailLocal1.r__I__I(15), new $c_sjsr_AnonFunction0(((this$9$1) => (() => (-1)))(this))));
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Sub)) {
+        var x$1$16 = $as_Lapoo_syntax_Apoo$Instr$Sub(x9);
+        var x43 = x$1$16.Lapoo_syntax_Apoo$Instr$Sub__f_r1;
+        var x44 = x$1$16.Lapoo_syntax_Apoo$Instr$Sub__f_r2;
+        var this$121 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x31 = $m_sr_ScalaRunTime$();
+        var self$20 = (((($p_Lapoo_backend_Semantics$__show__I__T(this, x44) + " := ") + $p_Lapoo_backend_Semantics$__show__I__T(this, x43)) + "-") + $p_Lapoo_backend_Semantics$__show__I__T(this, x44));
         var prog$17 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
-        var pc$16 = $uI(st$tailLocal1.Lapoo_backend_Semantics$St__f_stk.getOrElse__O__F0__O(st$tailLocal1.r__I__I(15), new $c_sjsr_AnonFunction0(((this$10$1) => (() => (-1)))(this))));
-        var $$x31 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
-        var y$30 = (((-1) + st$tailLocal1.r__I__I(15)) | 0);
-        var reg$17 = $as_sci_Map($$x31.$plus__T2__sci_MapOps(new $c_T2(15, y$30)));
+        var pc$17 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
+        var $$x30 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var y$29 = ((st$tailLocal1.r__I__I(x43) - st$tailLocal1.r__I__I(x44)) | 0);
+        var reg$17 = $as_sci_Map($$x30.$plus__T2__sci_MapOps(new $c_T2(x44, y$29)));
         var mem$17 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
         var lbl$17 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
         var stk$17 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-        var y$31 = new $c_Lapoo_backend_Semantics$St(prog$17, pc$16, reg$17, mem$17, lbl$17, stk$17);
-        var elems$16 = $$x32.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$19, y$31)]));
-        return this$123.from__sc_IterableOnce__sci_Set(elems$16)
+        var y$30 = new $c_Lapoo_backend_Semantics$St(prog$17, pc$17, reg$17, mem$17, lbl$17, stk$17);
+        var elems$17 = $$x31.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$20, y$30)]));
+        return this$121.from__sc_IterableOnce__sci_Set(elems$17)
       };
-      if (((x6 instanceof $c_Lapoo_syntax_Apoo$Instr$Halt) && ($as_Lapoo_syntax_Apoo$Instr$Halt(x6), true))) {
-        var this$124 = $m_s_Predef$().s_Predef$__f_Set;
-        var elems$17 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
-        return this$124.from__sc_IterableOnce__sci_Set(elems$17)
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Mul)) {
+        var x$1$17 = $as_Lapoo_syntax_Apoo$Instr$Mul(x9);
+        var x39 = x$1$17.Lapoo_syntax_Apoo$Instr$Mul__f_r1;
+        var x40 = x$1$17.Lapoo_syntax_Apoo$Instr$Mul__f_r2;
+        var this$128 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x33 = $m_sr_ScalaRunTime$();
+        var self$21 = (((($p_Lapoo_backend_Semantics$__show__I__T(this, x40) + " := ") + $p_Lapoo_backend_Semantics$__show__I__T(this, x39)) + "*") + $p_Lapoo_backend_Semantics$__show__I__T(this, x40));
+        var prog$18 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
+        var pc$18 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
+        var $$x32 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var y$31 = $imul(st$tailLocal1.r__I__I(x39), st$tailLocal1.r__I__I(x40));
+        var reg$18 = $as_sci_Map($$x32.$plus__T2__sci_MapOps(new $c_T2(x40, y$31)));
+        var mem$18 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
+        var lbl$18 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
+        var stk$18 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
+        var y$32 = new $c_Lapoo_backend_Semantics$St(prog$18, pc$18, reg$18, mem$18, lbl$18, stk$18);
+        var elems$18 = $$x33.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$21, y$32)]));
+        return this$128.from__sc_IterableOnce__sci_Set(elems$18)
       };
-      var this$128 = $m_s_Predef$().s_Predef$__f_Set;
-      var $$x33 = $m_sr_ScalaRunTime$();
-      var prog$18 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
-      var reg$18 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
-      var mem$18 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
-      var lbl$18 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
-      var stk$18 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
-      var y$32 = new $c_Lapoo_backend_Semantics$St(prog$18, (-1), reg$18, mem$18, lbl$18, stk$18);
-      var elems$18 = $$x33.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2("Error: Out of Program", y$32)]));
-      return this$128.from__sc_IterableOnce__sci_Set(elems$18)
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Div)) {
+        var x$1$18 = $as_Lapoo_syntax_Apoo$Instr$Div(x9);
+        var x35 = x$1$18.Lapoo_syntax_Apoo$Instr$Div__f_r1;
+        var x36 = x$1$18.Lapoo_syntax_Apoo$Instr$Div__f_r2;
+        var this$135 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x35 = $m_sr_ScalaRunTime$();
+        var self$22 = (((($p_Lapoo_backend_Semantics$__show__I__T(this, x36) + " := ") + $p_Lapoo_backend_Semantics$__show__I__T(this, x35)) + "/") + $p_Lapoo_backend_Semantics$__show__I__T(this, x36));
+        var prog$19 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
+        var pc$19 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
+        var $$x34 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var y$33 = $intDiv(st$tailLocal1.r__I__I(x35), st$tailLocal1.r__I__I(x36));
+        var reg$19 = $as_sci_Map($$x34.$plus__T2__sci_MapOps(new $c_T2(x36, y$33)));
+        var mem$19 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
+        var lbl$19 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
+        var stk$19 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
+        var y$34 = new $c_Lapoo_backend_Semantics$St(prog$19, pc$19, reg$19, mem$19, lbl$19, stk$19);
+        var elems$19 = $$x35.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$22, y$34)]));
+        return this$135.from__sc_IterableOnce__sci_Set(elems$19)
+      };
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Mod)) {
+        var x$1$19 = $as_Lapoo_syntax_Apoo$Instr$Mod(x9);
+        var x31 = x$1$19.Lapoo_syntax_Apoo$Instr$Mod__f_r1;
+        var x32 = x$1$19.Lapoo_syntax_Apoo$Instr$Mod__f_r2;
+        var this$142 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x37 = $m_sr_ScalaRunTime$();
+        var self$23 = (((($p_Lapoo_backend_Semantics$__show__I__T(this, x32) + " := ") + $p_Lapoo_backend_Semantics$__show__I__T(this, x31)) + "%") + $p_Lapoo_backend_Semantics$__show__I__T(this, x32));
+        var prog$20 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
+        var pc$20 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
+        var $$x36 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var y$35 = $intMod(st$tailLocal1.r__I__I(x31), st$tailLocal1.r__I__I(x32));
+        var reg$20 = $as_sci_Map($$x36.$plus__T2__sci_MapOps(new $c_T2(x32, y$35)));
+        var mem$20 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
+        var lbl$20 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
+        var stk$20 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
+        var y$36 = new $c_Lapoo_backend_Semantics$St(prog$20, pc$20, reg$20, mem$20, lbl$20, stk$20);
+        var elems$20 = $$x37.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$23, y$36)]));
+        return this$142.from__sc_IterableOnce__sci_Set(elems$20)
+      };
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Load)) {
+        var x$1$20 = $as_Lapoo_syntax_Apoo$Instr$Load(x9);
+        var x27 = x$1$20.Lapoo_syntax_Apoo$Instr$Load__f_m;
+        var x28 = x$1$20.Lapoo_syntax_Apoo$Instr$Load__f_r;
+        var this$149 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x39 = $m_sr_ScalaRunTime$();
+        var self$24 = (((("load " + $p_Lapoo_backend_Semantics$__show__I__T(this, x28)) + " := mem(") + x27) + ")");
+        var prog$21 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
+        var pc$21 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
+        var $$x38 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var y$37 = st$tailLocal1.m__I__I(x27);
+        var reg$21 = $as_sci_Map($$x38.$plus__T2__sci_MapOps(new $c_T2(x28, y$37)));
+        var mem$21 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
+        var lbl$21 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
+        var stk$21 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
+        var y$38 = new $c_Lapoo_backend_Semantics$St(prog$21, pc$21, reg$21, mem$21, lbl$21, stk$21);
+        var elems$21 = $$x39.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$24, y$38)]));
+        return this$149.from__sc_IterableOnce__sci_Set(elems$21)
+      };
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Loadn)) {
+        var x$1$21 = $as_Lapoo_syntax_Apoo$Instr$Loadn(x9);
+        var x23 = x$1$21.Lapoo_syntax_Apoo$Instr$Loadn__f_n;
+        var x24 = x$1$21.Lapoo_syntax_Apoo$Instr$Loadn__f_r;
+        var this$156 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x40 = $m_sr_ScalaRunTime$();
+        var self$25 = ((("load " + $p_Lapoo_backend_Semantics$__show__I__T(this, x24)) + " := ") + x23);
+        var prog$22 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
+        var pc$22 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
+        var reg$22 = $as_sci_Map(st$tailLocal1.Lapoo_backend_Semantics$St__f_reg.$plus__T2__sci_MapOps(new $c_T2(x24, x23)));
+        var mem$22 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
+        var lbl$22 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
+        var stk$22 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
+        var y$39 = new $c_Lapoo_backend_Semantics$St(prog$22, pc$22, reg$22, mem$22, lbl$22, stk$22);
+        var elems$22 = $$x40.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$25, y$39)]));
+        return this$156.from__sc_IterableOnce__sci_Set(elems$22)
+      };
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Loadi)) {
+        var x$1$22 = $as_Lapoo_syntax_Apoo$Instr$Loadi(x9);
+        var x19 = x$1$22.Lapoo_syntax_Apoo$Instr$Loadi__f_r1;
+        var x20 = x$1$22.Lapoo_syntax_Apoo$Instr$Loadi__f_r2;
+        var this$163 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x42 = $m_sr_ScalaRunTime$();
+        var self$26 = (((("load " + $p_Lapoo_backend_Semantics$__show__I__T(this, x20)) + " := mem(") + $p_Lapoo_backend_Semantics$__show__I__T(this, x19)) + ")");
+        var prog$23 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
+        var pc$23 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
+        var $$x41 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var y$40 = st$tailLocal1.m__I__I(st$tailLocal1.r__I__I(x19));
+        var reg$23 = $as_sci_Map($$x41.$plus__T2__sci_MapOps(new $c_T2(x20, y$40)));
+        var mem$23 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
+        var lbl$23 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
+        var stk$23 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
+        var y$41 = new $c_Lapoo_backend_Semantics$St(prog$23, pc$23, reg$23, mem$23, lbl$23, stk$23);
+        var elems$23 = $$x42.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$26, y$41)]));
+        return this$163.from__sc_IterableOnce__sci_Set(elems$23)
+      };
+      if ((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Loado)) {
+        var x$1$23 = $as_Lapoo_syntax_Apoo$Instr$Loado(x9);
+        var x15 = x$1$23.Lapoo_syntax_Apoo$Instr$Loado__f_n;
+        var x16 = x$1$23.Lapoo_syntax_Apoo$Instr$Loado__f_r;
+        var this$170 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x44 = $m_sr_ScalaRunTime$();
+        var self$27 = (((((("load " + $p_Lapoo_backend_Semantics$__show__I__T(this, x16)) + " := stack(") + st$tailLocal1.r__I__I(14)) + "+") + x15) + ")");
+        var prog$24 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
+        var pc$24 = ((1 + st$tailLocal1.Lapoo_backend_Semantics$St__f_pc) | 0);
+        var $$x43 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var y$42 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk.getOrElse__O__F0__O(((st$tailLocal1.r__I__I(14) + x15) | 0), new $c_sjsr_AnonFunction0(((this$4$1) => (() => (-1)))(this)));
+        var reg$24 = $as_sci_Map($$x43.$plus__T2__sci_MapOps(new $c_T2(x16, y$42)));
+        var mem$24 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
+        var lbl$24 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
+        var stk$24 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
+        var y$43 = new $c_Lapoo_backend_Semantics$St(prog$24, pc$24, reg$24, mem$24, lbl$24, stk$24);
+        var elems$24 = $$x44.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$27, y$43)]));
+        return this$170.from__sc_IterableOnce__sci_Set(elems$24)
+      };
+      if (((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Rtn) && ($as_Lapoo_syntax_Apoo$Instr$Rtn(x9), true))) {
+        var this$176 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x46 = $m_sr_ScalaRunTime$();
+        var self$28 = ("return to " + st$tailLocal1.Lapoo_backend_Semantics$St__f_stk.getOrElse__O__F0__O(st$tailLocal1.r__I__I(15), new $c_sjsr_AnonFunction0(((this$5$1) => (() => (-1)))(this))));
+        var prog$25 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
+        var pc$25 = $uI(st$tailLocal1.Lapoo_backend_Semantics$St__f_stk.getOrElse__O__F0__O(st$tailLocal1.r__I__I(15), new $c_sjsr_AnonFunction0(((this$6$1) => (() => (-1)))(this))));
+        var $$x45 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var y$44 = (((-1) + st$tailLocal1.r__I__I(15)) | 0);
+        var reg$25 = $as_sci_Map($$x45.$plus__T2__sci_MapOps(new $c_T2(15, y$44)));
+        var mem$25 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
+        var lbl$25 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
+        var stk$25 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
+        var y$45 = new $c_Lapoo_backend_Semantics$St(prog$25, pc$25, reg$25, mem$25, lbl$25, stk$25);
+        var elems$25 = $$x46.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self$28, y$45)]));
+        return this$176.from__sc_IterableOnce__sci_Set(elems$25)
+      };
+      if (((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Halt) && ($as_Lapoo_syntax_Apoo$Instr$Halt(x9), true))) {
+        var this$177 = $m_s_Predef$().s_Predef$__f_Set;
+        var elems$26 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
+        return this$177.from__sc_IterableOnce__sci_Set(elems$26)
+      };
+      if (((x9 instanceof $c_Lapoo_syntax_Apoo$Instr$Fail) && ($as_Lapoo_syntax_Apoo$Instr$Fail(x9), true))) {
+        var this$181 = $m_s_Predef$().s_Predef$__f_Set;
+        var $$x47 = $m_sr_ScalaRunTime$();
+        var prog$26 = st$tailLocal1.Lapoo_backend_Semantics$St__f_prog;
+        var reg$26 = st$tailLocal1.Lapoo_backend_Semantics$St__f_reg;
+        var mem$26 = st$tailLocal1.Lapoo_backend_Semantics$St__f_mem;
+        var lbl$26 = st$tailLocal1.Lapoo_backend_Semantics$St__f_lbl;
+        var stk$26 = st$tailLocal1.Lapoo_backend_Semantics$St__f_stk;
+        var y$46 = new $c_Lapoo_backend_Semantics$St(prog$26, (-1), reg$26, mem$26, lbl$26, stk$26);
+        var elems$27 = $$x47.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2("Error: Out of Program", y$46)]));
+        return this$181.from__sc_IterableOnce__sci_Set(elems$27)
+      };
+      throw new $c_s_MatchError(x9)
     }
   }
 });
@@ -15446,12 +15596,12 @@ function $c_Lapoo_frontend_CaosConfig$() {
     return $m_Lapoo_syntax_Parser$().parseProgram__T__Lapoo_syntax_Apoo$Program(str$1)
   }))(this));
   $m_s_package$();
-  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_frontend_Configurator$Example.getArrayOf().constr)([new $c_Lcaos_frontend_Configurator$Example("loadn 4 r1\n# an argument\npush r1\nzero r1\njsr test\npop r1\nhalt\ntest: push rf \n#saves the current frame pointer\n#current frame pointer\nstorer rs rf \nloadn 6 r2\n# reserves some local space\nadd r2 rs \n# gets the argument \nloado -2 r1 \n# only testing the rs\npush r1 \npop r1\n#stores contents of r1 at rf+1\nstoreo r1 1\n#loads the same value into r3\nloado 1 r3 \n# restores stack before return \nsub rs r2 \nstorer r2 rs\n# restores frame before return\npop rf \nrtn", "Simple", "Simple example"), new $c_Lcaos_frontend_Configurator$Example("jsr main\nhalt\n\nfactorial: push rf\nstorer rs rf\nloado -2 r3\nloadn 0 r2\nsub r3 r2\njnzero r2 L0\nloadn 1 r2\nstorer r2 r0\npop rf\nrtn\n\nL0: loado -2 r4\nloadn 1 r3\nsub r4 r3\npush r3\njsr factorial\nloadn 1 r3\nsub rs r3\nstorer r3 rs\nstorer r0 r3\nloado -2 r2\nmul r3 r2\nstorer r2 r0\npop rf\nrtn\npop rf\nrtn\n\nmain: push rf\nstorer rs rf\nloadn 2 r2\nadd r2 rs\nload 50001 r1\nstoreo r1 2\nloado 2 r2\npush r2\njsr factorial\nloadn 1 r2\nsub rs r2\nstorer r2 rs\nstoreo r0 1\nloado 1 r2\nstore r2 50001\nloadn 10 r2\nstore r2 50000\nloadn 2 r2\nsub rs r2\nstorer r2 rs\npop rf\nrtn", "Factorial", "Factorial example")]));
+  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_frontend_Configurator$Example.getArrayOf().constr)([new $c_Lcaos_frontend_Configurator$Example("jsr mylabel\nstoreo r2 2\nmylabel: storeo r1 5", "Basic", "Tutorial example: the program starts by jumping to the instruction in address 002, labelled by `mylabel`, and then stores the value 5 in register r1, without assigning a value to register r2."), new $c_Lcaos_frontend_Configurator$Example("loadn 4 r1\n# an argument\npush r1\nzero r1\njsr test\npop r1\nhalt\ntest: push rf \n#saves the current frame pointer\n#current frame pointer\nstorer rs rf \nloadn 6 r2\n# reserves some local space\nadd r2 rs \n# gets the argument \nloado -2 r1 \n# only testing the rs\npush r1 \npop r1\n#stores contents of r1 at rf+1\nstoreo r1 1\n#loads the same value into r3\nloado 1 r3 \n# restores stack before return \nsub rs r2 \nstorer r2 rs\n# restores frame before return\npop rf \nrtn", "Small", "Simple example to illustrate some instructions."), new $c_Lcaos_frontend_Configurator$Example("jsr main\nhalt\n\nfactorial: push rf\nstorer rs rf\nloado -2 r3\nloadn 0 r2\nsub r3 r2\njnzero r2 L0\nloadn 1 r2\nstorer r2 r0\npop rf\nrtn\n\nL0: loado -2 r4\nloadn 1 r3\nsub r4 r3\npush r3\njsr factorial\nloadn 1 r3\nsub rs r3\nstorer r3 rs\nstorer r0 r3\nloado -2 r2\nmul r3 r2\nstorer r2 r0\npop rf\nrtn\npop rf\nrtn\n\nmain: push rf\nstorer rs rf\nloadn 2 r2\nadd r2 rs\nload 50001 r1\nstoreo r1 2\nloado 2 r2\npush r2\njsr factorial\nloadn 1 r2\nsub rs r2\nstorer r2 rs\nstoreo r0 1\nloado 1 r2\nstore r2 50001\nloadn 10 r2\nstore r2 50000\nloadn 2 r2\nsub rs r2\nstorer r2 rs\npop rf\nrtn", "Factorial", "Factorial example.")]));
   this.Lapoo_frontend_CaosConfig$__f_examples = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
   $m_s_package$();
   var $$x4 = $m_sr_ScalaRunTime$();
-  var this$16 = $m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$2$1) => ((_$1) => $dp_toString__T(_$1)))(this)), $m_Lcaos_view_Text$());
-  var y = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$16, 1);
+  var this$22 = $m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$2$1) => ((_$1) => $dp_toString__T(_$1)))(this)), $m_Lcaos_view_Text$());
+  var y = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$22, 1);
   var $$x3 = new $c_T2("View parsed data", y);
   var y$1 = $m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$3$1) => ((p) => {
     var p$1 = $as_Lapoo_syntax_Apoo$Program(p);
@@ -15461,22 +15611,22 @@ function $c_Lapoo_frontend_CaosConfig$() {
     return $p_Lapoo_frontend_CaosConfig$__showState__Lapoo_backend_Semantics$St__T(this$4$1, st$1)
   }))(this)), $m_Lcaos_view_Text$());
   var $$x2 = new $c_T2("Run semantics", y$1);
-  var this$21 = $m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$5$1) => ((p$2) => {
+  var this$27 = $m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$5$1) => ((p$2) => {
     var p$3 = $as_Lapoo_syntax_Apoo$Program(p$2);
     return $m_Lapoo_backend_Semantics$().init__Lapoo_syntax_Apoo$Program__Lapoo_backend_Semantics$St(p$3)
   }))(this)), $m_Lapoo_backend_Semantics$(), new $c_sjsr_AnonFunction1(((this$6$1) => ((_$2) => {
     var _$2$1 = $as_Lapoo_backend_Semantics$St(_$2);
-    return _$2$1.toString__T()
+    return _$2$1.pp__T()
   }))(this)), $m_Lcaos_view_Text$());
-  var y$2 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$21);
+  var y$2 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$27);
   var $$x1 = new $c_T2("Run semantics (full)", y$2);
   var y$3 = $m_Lcaos_frontend_Configurator$().lts__F1__Lcaos_sos_SOS__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$7$1) => ((p$3$1) => {
     var p$4 = $as_Lapoo_syntax_Apoo$Program(p$3$1);
     return $m_Lapoo_backend_Semantics$().init__Lapoo_syntax_Apoo$Program__Lapoo_backend_Semantics$St(p$4)
-  }))(this)), $m_Lapoo_backend_Semantics$(), new $c_sjsr_AnonFunction1(((this$8$1) => ((st$2) => {
-    $as_Lapoo_backend_Semantics$St(st$2);
-    return ""
-  }))(this)), $m_Lcaos_frontend_Configurator$().lts$default$4__F1(), 80);
+  }))(this)), $m_Lapoo_backend_Semantics$(), new $c_sjsr_AnonFunction1(((this$8$1) => ((_$3) => {
+    var _$3$1 = $as_Lapoo_backend_Semantics$St(_$3);
+    return _$3$1.simplePP__T()
+  }))(this)), $m_Lcaos_frontend_Configurator$().lts$default$4__F1(), 150);
   var elems$1 = $$x4.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x3, $$x2, $$x1, new $c_T2("Build LTS", y$3)]));
   this.Lapoo_frontend_CaosConfig$__f_widgets = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$1)
 }
@@ -24635,27 +24785,32 @@ $c_Lapoo_backend_Semantics$St.prototype.productElement__I__O = (function(n) {
   }
 });
 $c_Lapoo_backend_Semantics$St.prototype.toString__T = (function() {
+  return this.simplePP__T()
+});
+$c_Lapoo_backend_Semantics$St.prototype.pp__T = (function() {
   $m_s_package$();
   var $$x4 = $m_sr_ScalaRunTime$();
   var this$1 = this.Lapoo_backend_Semantics$St__f_pc;
   var this$3 = this.Lapoo_backend_Semantics$St__f_prog.Lapoo_syntax_Apoo$Program__f_instrs;
-  var n = this.Lapoo_backend_Semantics$St__f_pc;
-  var $$x3 = $f_sc_LinearSeqOps__apply__I__O(this$3, n);
-  var $$x2 = this.Lapoo_backend_Semantics$St__f_reg.apply__O__O(14);
-  var $$x1 = this.Lapoo_backend_Semantics$St__f_reg.apply__O__O(15);
-  var this$4 = this.Lapoo_backend_Semantics$St__f_reg;
-  var this$5 = this$4.removed__O__sci_MapOps(14);
-  var this$7 = $as_sc_IterableOnceOps(this$5.removed__O__sci_MapOps(15).map__F1__O(new $c_sjsr_AnonFunction1(((this$6) => ((kv) => {
+  var a = this.Lapoo_backend_Semantics$St__f_pc;
+  var this$4 = new $c_s_PartialFunction$Lifted(this$3);
+  var this$5 = this$4.apply__O__s_Option(a);
+  var $$x3 = (this$5.isEmpty__Z() ? "-" : this$5.get__O());
+  var $$x2 = this.r__I__I(14);
+  var $$x1 = this.r__I__I(15);
+  var this$6 = this.Lapoo_backend_Semantics$St__f_reg;
+  var this$7 = this$6.removed__O__sci_MapOps(14);
+  var this$8 = $as_sc_IterableOnceOps(this$7.removed__O__sci_MapOps(15).map__F1__O(new $c_sjsr_AnonFunction1(((this$2$1) => ((kv) => {
     var kv$1 = $as_T2(kv);
     return (((",r" + kv$1._1__O()) + ":") + kv$1._2__O())
   }))(this))));
-  var elems = $$x4.wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([((("" + this$1) + ": ") + $$x3), (((("rf:" + $$x2) + ",rs:") + $$x1) + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$7, "", "", "")), $p_Lapoo_backend_Semantics$St__sh__sci_Map__T(this, this.Lapoo_backend_Semantics$St__f_mem), $p_Lapoo_backend_Semantics$St__sh__sci_Map__T(this, this.Lapoo_backend_Semantics$St__f_lbl), $p_Lapoo_backend_Semantics$St__sh__sci_Map__T(this, this.Lapoo_backend_Semantics$St__f_stk)]));
-  var this$11 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
-  var f = ((this$2$1) => ((_$1) => {
+  var elems = $$x4.wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([((("" + this$1) + ": ") + $$x3), (((("rf:" + $$x2) + ",rs:") + $$x1) + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$8, "", "", "")), $p_Lapoo_backend_Semantics$St__sh__sci_Map__T(this, this.Lapoo_backend_Semantics$St__f_mem), $p_Lapoo_backend_Semantics$St__sh__sci_Map__T(this, this.Lapoo_backend_Semantics$St__f_lbl), $p_Lapoo_backend_Semantics$St__sh__sci_Map__T(this, this.Lapoo_backend_Semantics$St__f_stk)]));
+  var this$12 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
+  var f = ((this$3$1) => ((_$1) => {
     var _$1$1 = $as_T(_$1);
     return (_$1$1 !== "")
   }))(this);
-  var l = this$11;
+  var l = this$12;
   block: {
     var result;
     while (true) {
@@ -24720,11 +24875,25 @@ $c_Lapoo_backend_Semantics$St.prototype.toString__T = (function() {
   };
   return $f_sc_IterableOnceOps__mkString__T__T__T__T(result, "", " / ", "")
 });
+$c_Lapoo_backend_Semantics$St.prototype.simplePP__T = (function() {
+  return ("r1:" + this.r__I__I(1))
+});
 $c_Lapoo_backend_Semantics$St.prototype.r__I__I = (function(n) {
   return $uI(this.Lapoo_backend_Semantics$St__f_reg.getOrElse__O__F0__O(n, new $c_sjsr_AnonFunction0(((this$1) => (() => 0))(this))))
 });
 $c_Lapoo_backend_Semantics$St.prototype.m__I__I = (function(n) {
   return $uI(this.Lapoo_backend_Semantics$St__f_mem.getOrElse__O__F0__O(n, new $c_sjsr_AnonFunction0(((this$1) => (() => 0))(this))))
+});
+$c_Lapoo_backend_Semantics$St.prototype.a__O__I = (function(addr) {
+  if ($isInt(addr)) {
+    var m = $uI(addr);
+    return m
+  };
+  if (((typeof addr) === "string")) {
+    var s = $as_T(addr);
+    return $uI(this.Lapoo_backend_Semantics$St__f_prog.Lapoo_syntax_Apoo$Program__f_labels.getOrElse__O__F0__O(s, new $c_sjsr_AnonFunction0(((this$1) => (() => (-1)))(this))))
+  };
+  throw new $c_s_MatchError(addr)
 });
 function $as_Lapoo_backend_Semantics$St(obj) {
   return (((obj instanceof $c_Lapoo_backend_Semantics$St) || (obj === null)) ? obj : $throwClassCastException(obj, "apoo.backend.Semantics$St"))
