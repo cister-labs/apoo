@@ -2603,6 +2603,10 @@ function $f_Lcaos_frontend_widgets_WidgetInfo__$init$__V($thiz) {
   $thiz.expanded_$eq__Z__V(false);
   $thiz.location_$eq__I__V(0)
 }
+function $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo($thiz) {
+  $thiz.expanded_$eq__Z__V(true);
+  return $thiz
+}
 function $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo($thiz, i) {
   $thiz.location_$eq__I__V(i);
   return $thiz
@@ -15643,17 +15647,18 @@ function $c_Lapoo_frontend_CaosConfig$() {
   var this$22 = $m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$2$1) => ((_$1) => $dp_toString__T(_$1)))(this)), $m_Lcaos_view_Text$());
   var y = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$22, 1);
   var $$x3 = new $c_T2("View parsed data", y);
-  var y$1 = $m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$3$1) => ((p) => {
+  var this$25 = $m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$3$1) => ((p) => {
     var p$1 = $as_Lapoo_syntax_Apoo$Program(p);
     return $m_Lapoo_backend_Semantics$().init__Lapoo_syntax_Apoo$Program__Lapoo_backend_Semantics$St(p$1)
   }))(this)), $m_Lapoo_backend_Semantics$(), new $c_sjsr_AnonFunction1(((this$4$1) => ((_$2) => {
     var _$2$1 = $as_Lapoo_backend_Semantics$St(_$2);
     return _$2$1.simplePP__T()
   }))(this)), $m_Lcaos_view_Text$());
+  var y$1 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$25);
   var $$x2 = new $c_T2("Run semantics", y$1);
   var y$2 = $m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$5$1) => ((s) => {
     var s$1 = $as_Lapoo_syntax_Apoo$Program(s);
-    return $m_Lapoo_backend_Semantics$().execute__Lapoo_syntax_Apoo$Program__F1__I__T(s$1, new $c_sjsr_AnonFunction1(((this$27) => ((_$3) => {
+    return $m_Lapoo_backend_Semantics$().execute__Lapoo_syntax_Apoo$Program__F1__I__T(s$1, new $c_sjsr_AnonFunction1(((this$28) => ((_$3) => {
       var _$3$1 = $as_Lapoo_backend_Semantics$St(_$3);
       return _$3$1.simplePP__T()
     }))(this$5$1)), 1000)
