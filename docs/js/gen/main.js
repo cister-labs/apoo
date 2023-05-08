@@ -2603,10 +2603,6 @@ function $f_Lcaos_frontend_widgets_WidgetInfo__$init$__V($thiz) {
   $thiz.expanded_$eq__Z__V(false);
   $thiz.location_$eq__I__V(0)
 }
-function $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo($thiz) {
-  $thiz.expanded_$eq__Z__V(true);
-  return $thiz
-}
 function $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo($thiz, i) {
   $thiz.location_$eq__I__V(i);
   return $thiz
@@ -15643,10 +15639,10 @@ function $c_Lapoo_frontend_CaosConfig$() {
   var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_frontend_Configurator$Example.getArrayOf().constr)([new $c_Lcaos_frontend_Configurator$Example("jsr mylabel\nstoreo r2 2\nmylabel: storeo r1 5", "Basic", "Tutorial example: the program starts by jumping to the instruction in address 002, labelled by `mylabel`, and then stores the value 5 in register r1, without assigning a value to register r2."), new $c_Lcaos_frontend_Configurator$Example("loadn 4 r1\n# an argument\npush r1\nzero r1\njsr test\npop r1\nhalt\ntest: push rf \n#saves the current frame pointer\n#current frame pointer\nstorer rs rf \nloadn 6 r2\n# reserves some local space\nadd r2 rs \n# gets the argument \nloado -2 r1 \n# only testing the rs\npush r1 \npop r1\n#stores contents of r1 at rf+1\nstoreo r1 1\n#loads the same value into r3\nloado 1 r3 \n# restores stack before return \nsub rs r2 \nstorer r2 rs\n# restores frame before return\npop rf \nrtn", "Small", "Simple example to illustrate some instructions."), new $c_Lcaos_frontend_Configurator$Example("# Load \"3\" to memory\nloadn 3 r1\nstore r1 50001\n# Run \"main\"\njsr main\n# Result will be in r0\nhalt\n\nfactorial: push rf\nstorer rs rf\nloado -2 r3\nloadn 0 r2\nsub r3 r2\njnzero r2 L0\nloadn 1 r2\nstorer r2 r0\npop rf\nrtn\n\nL0: loado -2 r4\nloadn 1 r3\nsub r4 r3\npush r3\njsr factorial\nloadn 1 r3\nsub rs r3\nstorer r3 rs\nstorer r0 r3\nloado -2 r2\nmul r3 r2\nstorer r2 r0\npop rf\nrtn\npop rf\nrtn\n\nmain: push rf\nstorer rs rf\nloadn 2 r2\nadd r2 rs\nload 50001 r1\nstoreo r1 2\nloado 2 r2\npush r2\njsr factorial\nloadn 1 r2\nsub rs r2\nstorer r2 rs\nstoreo r0 1\nloado 1 r2\nstore r2 50001\nloadn 10 r2\nstore r2 50000\nloadn 2 r2\nsub rs r2\nstorer r2 rs\npop rf\nrtn", "Factorial", "Factorial example.")]));
   this.Lapoo_frontend_CaosConfig$__f_examples = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
   $m_s_package$();
-  var $$x5 = $m_sr_ScalaRunTime$();
+  var $$x4 = $m_sr_ScalaRunTime$();
   var this$22 = $m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$2$1) => ((_$1) => $dp_toString__T(_$1)))(this)), $m_Lcaos_view_Text$());
   var y = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$22, 1);
-  var $$x4 = new $c_T2("View parsed data", y);
+  var $$x3 = new $c_T2("View parsed data", y);
   var y$1 = $m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$3$1) => ((p) => {
     var p$1 = $as_Lapoo_syntax_Apoo$Program(p);
     return $m_Lapoo_backend_Semantics$().init__Lapoo_syntax_Apoo$Program__Lapoo_backend_Semantics$St(p$1)
@@ -15654,32 +15650,23 @@ function $c_Lapoo_frontend_CaosConfig$() {
     var _$2$1 = $as_Lapoo_backend_Semantics$St(_$2);
     return _$2$1.simplePP__T()
   }))(this)), $m_Lcaos_view_Text$());
-  var $$x3 = new $c_T2("Run semantics", y$1);
-  var this$27 = $m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$5$1) => ((p$2) => {
+  var $$x2 = new $c_T2("Run semantics", y$1);
+  var y$2 = $m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$5$1) => ((s) => {
+    var s$1 = $as_Lapoo_syntax_Apoo$Program(s);
+    return $m_Lapoo_backend_Semantics$().execute__Lapoo_syntax_Apoo$Program__F1__I__T(s$1, new $c_sjsr_AnonFunction1(((this$27) => ((_$3) => {
+      var _$3$1 = $as_Lapoo_backend_Semantics$St(_$3);
+      return _$3$1.simplePP__T()
+    }))(this$5$1)), 1000)
+  }))(this)), $m_Lcaos_view_Text$());
+  var $$x1 = new $c_T2("Final state", y$2);
+  var y$3 = $m_Lcaos_frontend_Configurator$().lts__F1__Lcaos_sos_SOS__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$6$1) => ((p$2) => {
     var p$3 = $as_Lapoo_syntax_Apoo$Program(p$2);
     return $m_Lapoo_backend_Semantics$().init__Lapoo_syntax_Apoo$Program__Lapoo_backend_Semantics$St(p$3)
-  }))(this)), $m_Lapoo_backend_Semantics$(), new $c_sjsr_AnonFunction1(((this$6$1) => ((_$3) => {
-    var _$3$1 = $as_Lapoo_backend_Semantics$St(_$3);
-    return _$3$1.pp__T()
-  }))(this)), $m_Lcaos_view_Text$());
-  var y$2 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$27);
-  var $$x2 = new $c_T2("Run semantics (full)", y$2);
-  var y$3 = $m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$7$1) => ((s) => {
-    var s$1 = $as_Lapoo_syntax_Apoo$Program(s);
-    return $m_Lapoo_backend_Semantics$().execute__Lapoo_syntax_Apoo$Program__F1__I__T(s$1, new $c_sjsr_AnonFunction1(((this$30) => ((_$4) => {
-      var _$4$1 = $as_Lapoo_backend_Semantics$St(_$4);
-      return _$4$1.simplePP__T()
-    }))(this$7$1)), 1000)
-  }))(this)), $m_Lcaos_view_Text$());
-  var $$x1 = new $c_T2("Final state", y$3);
-  var y$4 = $m_Lcaos_frontend_Configurator$().lts__F1__Lcaos_sos_SOS__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$8$1) => ((p$3$1) => {
-    var p$4 = $as_Lapoo_syntax_Apoo$Program(p$3$1);
-    return $m_Lapoo_backend_Semantics$().init__Lapoo_syntax_Apoo$Program__Lapoo_backend_Semantics$St(p$4)
-  }))(this)), $m_Lapoo_backend_Semantics$(), new $c_sjsr_AnonFunction1(((this$9$1) => ((_$5) => {
-    var _$5$1 = $as_Lapoo_backend_Semantics$St(_$5);
-    return _$5$1.simplePP__T()
+  }))(this)), $m_Lapoo_backend_Semantics$(), new $c_sjsr_AnonFunction1(((this$7$1) => ((_$4) => {
+    var _$4$1 = $as_Lapoo_backend_Semantics$St(_$4);
+    return _$4$1.simplePP__T()
   }))(this)), $m_Lcaos_frontend_Configurator$().lts$default$4__F1(), 150);
-  var elems$1 = $$x5.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x4, $$x3, $$x2, $$x1, new $c_T2("Build LTS", y$4)]));
+  var elems$1 = $$x4.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x3, $$x2, $$x1, new $c_T2("Build LTS", y$3)]));
   this.Lapoo_frontend_CaosConfig$__f_widgets = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$1)
 }
 $c_Lapoo_frontend_CaosConfig$.prototype = new $h_O();
@@ -24697,13 +24684,6 @@ var $d_sjsr_AnonFunction2 = new $TypeData().initClass({
   F2: 1
 });
 $c_sjsr_AnonFunction2.prototype.$classData = $d_sjsr_AnonFunction2;
-function $p_Lapoo_backend_Semantics$St__sh__sci_Map__T($thiz, m) {
-  var this$2 = $as_sc_IterableOnceOps(m.map__F1__O(new $c_sjsr_AnonFunction1(((this$1) => ((kv) => {
-    var kv$1 = $as_T2(kv);
-    return ((kv$1._1__O() + ":") + kv$1._2__O())
-  }))($thiz))));
-  return $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", ",", "")
-}
 /** @constructor */
 function $c_Lapoo_backend_Semantics$St(prog, pc, reg, mem, lbl, stk) {
   this.Lapoo_backend_Semantics$St__f_prog = null;
@@ -24838,94 +24818,6 @@ $c_Lapoo_backend_Semantics$St.prototype.productElement__I__O = (function(n) {
 });
 $c_Lapoo_backend_Semantics$St.prototype.toString__T = (function() {
   return this.simplePP__T()
-});
-$c_Lapoo_backend_Semantics$St.prototype.pp__T = (function() {
-  $m_s_package$();
-  var $$x4 = $m_sr_ScalaRunTime$();
-  var this$1 = this.Lapoo_backend_Semantics$St__f_pc;
-  var this$3 = this.Lapoo_backend_Semantics$St__f_prog.Lapoo_syntax_Apoo$Program__f_instrs;
-  var a = this.Lapoo_backend_Semantics$St__f_pc;
-  var this$4 = new $c_s_PartialFunction$Lifted(this$3);
-  var this$5 = this$4.apply__O__s_Option(a);
-  var $$x3 = (this$5.isEmpty__Z() ? "-" : this$5.get__O());
-  var $$x2 = this.r__I__I(14);
-  var $$x1 = this.r__I__I(15);
-  var this$6 = this.Lapoo_backend_Semantics$St__f_reg;
-  var this$7 = this$6.removed__O__sci_MapOps(14);
-  var this$8 = $as_sc_IterableOnceOps(this$7.removed__O__sci_MapOps(15).map__F1__O(new $c_sjsr_AnonFunction1(((this$2$1) => ((kv) => {
-    var kv$1 = $as_T2(kv);
-    return (((",r" + kv$1._1__O()) + ":") + kv$1._2__O())
-  }))(this))));
-  var elems = $$x4.wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([((("" + this$1) + ": ") + $$x3), (((("rf:" + $$x2) + ",rs:") + $$x1) + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$8, "", "", "")), $p_Lapoo_backend_Semantics$St__sh__sci_Map__T(this, this.Lapoo_backend_Semantics$St__f_mem), $p_Lapoo_backend_Semantics$St__sh__sci_Map__T(this, this.Lapoo_backend_Semantics$St__f_lbl), $p_Lapoo_backend_Semantics$St__sh__sci_Map__T(this, this.Lapoo_backend_Semantics$St__f_stk)]));
-  var this$12 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
-  var f = ((this$3$1) => ((_$1) => {
-    var _$1$1 = $as_T(_$1);
-    return (_$1$1 !== "")
-  }))(this);
-  var l = this$12;
-  block: {
-    var result;
-    while (true) {
-      if (l.isEmpty__Z()) {
-        var result = $m_sci_Nil$();
-        break
-      } else {
-        var h = l.head__O();
-        var t = $as_sci_List(l.tail__O());
-        if (($uZ(f(h)) === false)) {
-          l = t;
-          continue
-        };
-        var start = l;
-        var remaining = t;
-        while (true) {
-          if (remaining.isEmpty__Z()) {
-            var result = start;
-            break block
-          } else {
-            var x = remaining.head__O();
-            if (($uZ(f(x)) !== false)) {
-              remaining = $as_sci_List(remaining.tail__O());
-              continue
-            };
-            var firstMiss = remaining;
-            var newHead = new $c_sci_$colon$colon(start.head__O(), $m_sci_Nil$());
-            var toProcess = $as_sci_List(start.tail__O());
-            var currentLast = newHead;
-            while ((toProcess !== firstMiss)) {
-              var newElem = new $c_sci_$colon$colon(toProcess.head__O(), $m_sci_Nil$());
-              currentLast.sci_$colon$colon__f_next = newElem;
-              currentLast = newElem;
-              toProcess = $as_sci_List(toProcess.tail__O())
-            };
-            var next = $as_sci_List(firstMiss.tail__O());
-            var nextToCopy = next;
-            while ((!next.isEmpty__Z())) {
-              var head = next.head__O();
-              if (($uZ(f(head)) !== false)) {
-                next = $as_sci_List(next.tail__O())
-              } else {
-                while ((nextToCopy !== next)) {
-                  var newElem$2 = new $c_sci_$colon$colon(nextToCopy.head__O(), $m_sci_Nil$());
-                  currentLast.sci_$colon$colon__f_next = newElem$2;
-                  currentLast = newElem$2;
-                  nextToCopy = $as_sci_List(nextToCopy.tail__O())
-                };
-                nextToCopy = $as_sci_List(next.tail__O());
-                next = $as_sci_List(next.tail__O())
-              }
-            };
-            if ((!nextToCopy.isEmpty__Z())) {
-              currentLast.sci_$colon$colon__f_next = nextToCopy
-            };
-            var result = newHead;
-            break block
-          }
-        }
-      }
-    }
-  };
-  return $f_sc_IterableOnceOps__mkString__T__T__T__T(result, "", " / ", "")
 });
 $c_Lapoo_backend_Semantics$St.prototype.simplePP__T = (function() {
   var $$x3 = this.Lapoo_backend_Semantics$St__f_pc;
