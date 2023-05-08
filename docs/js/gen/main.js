@@ -15063,7 +15063,7 @@ $c_Lapoo_backend_Semantics$.prototype.execute__Lapoo_backend_Semantics$St__Lapoo
     var x9 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1);
     var x = $m_s_package$().s_package$__f_Nil;
     if (((x === null) ? (x9 === null) : x.equals__O__Z(x9))) {
-      return $as_T(sh.apply__O__O(prev$tailLocal1))
+      return $as_T(sh.apply__O__O(s$tailLocal1))
     };
     if ((x9 !== null)) {
       $m_s_package$();
